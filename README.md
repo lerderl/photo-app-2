@@ -66,4 +66,9 @@ Depending on your application's configuration some manual setup may be required:
 
      * Not required *
 
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require_tree .
+
 * ...
