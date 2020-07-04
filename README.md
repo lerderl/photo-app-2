@@ -71,4 +71,22 @@ Depending on your application's configuration some manual setup may be required:
 //= require turbolinks
 //= require_tree .
 
+<div class="form-group col-md-6">
+        <div class="col-md-12">
+          <%= p.label :card_expires, "Card Expires", data: { stripe: 'label'} %>
+        </div>
+
+        <div class="col-md-3">
+          <%= p.select :card_expires_month, options_for_select(Payment.month_options), 
+              { include_blank: 'Month' }, "data-stripe" => "exp-month", class: "form-control", 
+              required: true %>
+        </div>
+
+        <div class="col-md-3">
+          <%= p.select :card_expires_year, options_for_select(Payment.year_options.push), 
+              { include_blank: 'Year' }, class: "form-control", data: { stripe: "exp-year" }, 
+              required: true %>
+        </div>
+      </div>
+
 * ...
